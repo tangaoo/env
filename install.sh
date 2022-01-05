@@ -1,21 +1,32 @@
 #!/bin/bash
 
-# copy vim
-tar xzf vim_env.tar.gz
-cp  -r -i ./.vim ~ 
-cp  -r -i ./.vim ~ 
+if [ -e ~/.vimrc ]; then
+	echo -n "已存在vim，是否覆盖？y/n: "
+	read input
+	if [ $input = "y" ]; then
+		# copy vim
+		tar xzf vim_env.tar.gz
+		cp  -r -f ./.vim ~ 
+		cp  -f ./.vimrc ~ 
+	fi
+fi
 
-rm  -i ./.vimrc 
-rm  -i ./.vimrc 
+if [ -e ~/.zshrc ]; then
+	echo -n "已存在zsh，是否覆盖？y/n: "
+	read input
+	if [ $input = "y" ]; then
+		# copy zsh
+		tar xzf zshrc_env.tar.gz 
+		cp  -r -f ./.oh-my-zsh ~
+		cp  -f ./.zshrc ~
+	fi
+fi
 
-# copy zsh
-tar xzf zshrc_env.tar.gz 
-cp  -r -i ./.oh-my-zsh ~
-cp  -i ./.zshrc ~
+# do clean
+rm  -r -f ./.vim 
+rm  -f ./.vimrc 
 
-rm  -r -i ./.oh-my-zsh
-rm  -i ./.zshrc
-
-
+rm  -r -f ./.oh-my-zsh
+rm  -f ./.zshrc
 
 

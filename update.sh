@@ -1,5 +1,13 @@
 #!/bin/bash
 
+if [ -e ./vim_env.tar.gz ]; then
+	rm -f ./vim_env.tar.gz
+fi
+
+if [ -e ./zshrc_env.tar.gz ]; then
+	rm -f ./zshrc_env.tar.gz
+fi
+
 # copy vim
 cp  -r -f ~/.vim ./
 cp  -f ~/.vimrc ./
