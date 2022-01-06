@@ -11,6 +11,20 @@ if [ -e ~/.vimrc ]; then
 	fi
 fi
 
+# do clean
+rm  -r -f ./.vim 
+rm  -f ./.vimrc 
+
+
+echo -n "是否安装zsh？y/n: "
+read input
+if [ $input = "y" ]; then
+	sudo apt install zsh
+	wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh
+	sudo apt install global
+fi
+
+
 if [ -e ~/.zshrc ]; then
 	echo -n "已存在zsh，是否覆盖？y/n: "
 	read input
@@ -22,11 +36,11 @@ if [ -e ~/.zshrc ]; then
 	fi
 fi
 
-# do clean
-rm  -r -f ./.vim 
-rm  -f ./.vimrc 
 
 rm  -r -f ./.oh-my-zsh
 rm  -f ./.zshrc
+
+chsh -s /bin/zsh
+echo -n "安装完成，重新登陆系统"
 
 
