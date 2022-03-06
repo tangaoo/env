@@ -9,6 +9,11 @@ if [ -e ~/.vimrc ]; then
 		cp  -r -f ./.vim ~ 
 		cp  -f ./.vimrc ~ 
 	fi
+else
+		# copy vim
+		tar xzf vim_env.tar.gz
+		cp  -r -f ./.vim ~ 
+		cp  -f ./.vimrc ~ 
 fi
 
 # do clean
