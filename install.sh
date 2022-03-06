@@ -20,7 +20,6 @@ echo -n "是否安装zsh？y/n: "
 read input
 if [ $input = "y" ]; then
 	sudo apt install zsh
-	wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh
 	sudo apt install global
 fi
 
