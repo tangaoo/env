@@ -21,7 +21,7 @@ rm  -r -f ./.vim
 rm  -f ./.vimrc 
 
 
-echo -n "是否安装zsh？y/n: "
+echo -n "是否需要安装zsh？y/n: "
 read input
 if [ $input = "y" ]; then
 	sudo apt install zsh
