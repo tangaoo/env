@@ -38,6 +38,11 @@ if [ -e ~/.zshrc ]; then
 		cp  -r -f ./.oh-my-zsh ~
 		cp  -f ./.zshrc ~
 	fi
+else
+	# copy zsh
+	tar xzf zshrc_env.tar.gz 
+	cp  -r -f ./.oh-my-zsh ~
+	cp  -f ./.zshrc ~
 fi
 
 
